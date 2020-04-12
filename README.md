@@ -51,8 +51,9 @@ Compatible with the following list of operating systems:
 | role_systemparameters_sysctl_list | Combined list of other lists that start with the name `role_systemparameters_sysctl_list_`. Each list contains files and parameters to manage. |
 | role_systemparameters_modprobe_list | Combined list of other lists that start with the name `role_systemparameters_modprobe_list_`. Each list contains files and parameters to manage. |
 | role_systemparameters_kernelmodules_list | Combined list of other lists that start with the name `role_systemparameters_kernelmodules_list_`. Each list contains files and parameters to manage. |
+| role_systemparameters_limits_list | Combined list of other lists that start with the name `role_systemparameters_limits_list_`. Each list contains files and parameters to manage. |
 
-> Keep in mind that the list contain raw values for each line of the configuration. Please refer to the documentation of each specific part for further guidance. From this role point of view it only deploys the files from containing the raw parameters. This role does not contain any specific logic to help configuring each property. It just deploys files from the variable definitions given through the inventory.
+> Keep in mind that the list contain raw values for each line of the configuration. Please refer to the documentation of each specific part for further guidance. From this role point of view it only deploys the files from containing the raw parameters. This role does not contain any specific logic to help configuring each property. It just deploys files from the variable definitions given through the inventory.  
 
 ## Example Playbook
 
