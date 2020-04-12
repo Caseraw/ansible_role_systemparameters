@@ -2,6 +2,8 @@
 
 Managing sysctl, kernel modules and limits configuration.
 
+[![Build Status](https://travis-ci.org/Caseraw/ansible_role_systemparameters.svg?branch=master)](https://travis-ci.org/Caseraw/ansible_role_systemparameters) [<img src="https://img.shields.io/ansible/role/47840">](https://galaxy.ansible.com/caseraw/ansible_role_systemparameters) [<img src="https://img.shields.io/ansible/role/d/47840">](https://galaxy.ansible.com/caseraw/ansible_role_systemparameters) [<img src="https://img.shields.io/ansible/quality/47840">](https://galaxy.ansible.com/caseraw/ansible_role_systemparameters)
+
 - [Ansible role filemanager](#ansible-role-filemanager)
   - [License](#license)
   - [Author Information](#author-information)
@@ -118,15 +120,7 @@ Compatible with the following list of operating systems:
               - 'install sctp /bin/true'
               - 'install rds /bin/true'
               - 'install tipc /bin/true'
-        role_systemparameters_kernelmodules_list_some_profile_01:
-          - dest: /etc/modules-load.d/sample_configuration.conf
-            src: generic_conf_file.j2
-            state: present
-            owner: root
-            group: root
-            mode: '0644'
-            parameters:
-              - '# Sample line'
+        role_systemparameters_kernelmodules_list_some_profile_01: []
         role_systemparameters_limits_list_some_profile_01:
           - dest: /etc/security/limits.d/CIS.conf
             src: generic_conf_file.j2

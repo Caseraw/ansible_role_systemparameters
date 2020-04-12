@@ -3,10 +3,4 @@
   command: sysctl --system
   listen: sysctl_load_system
 
-- name: Load sysctl settings from all system configuration files
-  service:
-    name: systemd-modules-load
-    state: restarted
-  listen: restart_modules_load
-
 ...
