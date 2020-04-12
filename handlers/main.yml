@@ -1,6 +1,6 @@
 ---
 - name: Load sysctl settings from all system configuration files
-  shell: sysctl --system
+  command: sysctl --system
   listen: sysctl_load_system
 
 - name: Load sysctl settings from all system configuration files
