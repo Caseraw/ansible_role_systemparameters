@@ -1,0 +1,94 @@
+---
+### Managing sysctl parameters through configuration files.
+## Minimum required values: 'type', 'state' and 'dest'
+##
+## For better maintainability, the file list is built during runtime by
+## combining all lists together. This will provide the freedom of declaring
+## custom lists for granular control. The lists require a naming
+## convention by using a pattern. The pattern is rendered as a single list
+## which can be used for iteration with variable:
+## 'role_systemparameters_sysctl_list'. The list name pattern needs to start
+## with: 'role_systemparameters_sysctl_list_'
+
+role_systemparameters_sysctl_list_default: []
+
+# role_systemparameters_sysctl_list_example:
+#   - dest: /etc/sysctl.d/sample_configuration.conf
+#     src: generic_conf_file.j2
+#     state: present
+#     owner: root
+#     group: root
+#     mode: '0644'
+#     parameters:
+#       - '# Sample line'
+
+### Managing modprobe parameters through configuration files.
+## Minimum required values: 'type', 'state' and 'dest'
+##
+## For better maintainability, the file list is built during runtime by
+## combining all lists together. This will provide the freedom of declaring
+## custom lists for granular control. The lists require a naming
+## convention by using a pattern. The pattern is rendered as a single list
+## which can be used for iteration with variable:
+## 'role_systemparameters_modprobe_list'. The list name pattern needs to start
+## with: 'role_systemparameters_modprobe_list_'
+
+role_systemparameters_modprobe_list_default: []
+
+# role_systemparameters_modprobe_list_example:
+#   - dest: /etc/modprobe.d/sample_configuration.conf
+#     src: generic_conf_file.j2
+#     state: present
+#     owner: root
+#     group: root
+#     mode: '0644'
+#     parameters:
+#       - '# Sample line'
+
+### Managing kernel modules parameters through configuration files.
+## Minimum required values: 'type', 'state' and 'dest'
+##
+## For better maintainability, the file list is built during runtime by
+## combining all lists together. This will provide the freedom of declaring
+## custom lists for granular control. The lists require a naming
+## convention by using a pattern. The pattern is rendered as a single list
+## which can be used for iteration with variable:
+## 'role_systemparameters_kernelmodules_list'. The list name pattern needs to
+## start with: 'role_systemparameters_kernelmodules_list_'
+
+role_systemparameters_kernelmodules_list_default: []
+
+# role_systemparameters_kernelmodules_list_example:
+#   - dest: /etc/modules-load.d/sample_configuration.conf
+#     src: generic_conf_file.j2
+#     state: present
+#     owner: root
+#     group: root
+#     mode: '0644'
+#     parameters:
+#       - '# Sample line'
+
+### Managing sysctl parameters through configuration files.
+## Minimum required values: 'type', 'state' and 'dest'
+##
+## For better maintainability, the file list is built during runtime by
+## combining all lists together. This will provide the freedom of declaring
+## custom file lists for granular control. The lists require a naming
+## convention by using a pattern. The pattern is rendered as a single list
+## which can be used for iteration with variable:
+## 'role_systemparameters_limits_list'. The list name pattern needs to
+## start with: 'role_systemparameters_limits_list'
+
+role_systemparameters_limits_list_default: []
+
+# role_systemparameters_limits_list_example:
+#   - dest: /etc/modules-load.d/sample_configuration.conf
+#     src: generic_conf_file.j2
+#     state: present
+#     owner: root
+#     group: root
+#     mode: '0644'
+#     parameters:
+#       - '# Sample line'
+
+...

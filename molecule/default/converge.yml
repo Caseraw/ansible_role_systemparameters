@@ -1,0 +1,81 @@
+---
+- name: Converge
+  hosts: all
+  become: True
+  gather_facts: True
+  tasks:
+    - import_role:
+        name: ansible_role_systemparameters
+      vars:
+        role_systemparameters_sysctl_list_some_profile_01:
+          - dest: /etc/sysctl.d/CIS.conf
+            src: generic_conf_file.j2
+            state: present
+            owner: root
+            group: root
+            mode: '0644'
+            parameters:
+              - 'fs.suid_dumpable = 0'
+              - 'kernel.randomize_va_space = 2'
+              - 'net.ipv4.ip_forward = 0'
+              - 'net.ipv4.conf.all.send_redirects = 0'
+              - 'net.ipv4.conf.default.send_redirects = 0'
+              - 'net.ipv4.conf.all.accept_source_route = 0'
+              - 'net.ipv4.conf.default.accept_source_route = 0'
+              - 'net.ipv4.conf.all.accept_redirects = 0'
+              - 'net.ipv4.conf.default.accept_redirects = 0'
+              - 'net.ipv4.conf.all.secure_redirects = 0'
+              - 'net.ipv4.conf.default.secure_redirects = 0'
+              - 'net.ipv4.conf.all.log_martians = 1'
+              - 'net.ipv4.conf.default.log_martians = 1'
+              - 'net.ipv4.icmp_echo_ignore_broadcasts = 1'
+              - 'net.ipv4.icmp_ignore_bogus_error_responses = 1'
+              - 'net.ipv4.conf.all.rp_filter = 1'
+              - 'net.ipv4.conf.default.rp_filter = 1'
+              - 'net.ipv4.tcp_syncookies = 1'
+              - 'net.ipv6.conf.all.accept_ra = 0'
+              - 'net.ipv6.conf.default.accept_ra = 0'
+              - 'net.ipv6.conf.all.accept_redirects = 0'
+              - 'net.ipv6.conf.default.accept_redirects = 0'
+        role_systemparameters_modprobe_list_some_profile_01:
+          - dest: /etc/modprobe.d/CIS.conf
+            src: generic_conf_file.j2
+            state: present
+            owner: root
+            group: root
+            mode: '0644'
+            parameters:
+              - 'install cramfs /bin/true'
+              - 'install freevxfs /bin/true'
+              - 'install jffs2 /bin/true'
+              - 'install hfs /bin/true'
+              - 'install hfsplus /bin/true'
+              - 'install squashfs /bin/true'
+              - 'install udf /bin/true'
+              - 'install vfat /bin/true'
+              - 'install usb-storage /bin/true'
+              - 'install firewire-core /bin/true'
+              - 'install dccp /bin/true'
+              - 'install sctp /bin/true'
+              - 'install rds /bin/true'
+              - 'install tipc /bin/true'
+        role_systemparameters_kernelmodules_list_some_profile_01:
+          - dest: /etc/modules-load.d/sample_configuration.conf
+            src: generic_conf_file.j2
+            state: present
+            owner: root
+            group: root
+            mode: '0644'
+            parameters:
+              - '# Sample line'
+        role_systemparameters_limits_list_some_profile_01:
+          - dest: /etc/security/limits.d/CIS.conf
+            src: generic_conf_file.j2
+            state: present
+            owner: root
+            group: root
+            mode: '0644'
+            parameters:
+              - '* hard core 0'
+
+...
