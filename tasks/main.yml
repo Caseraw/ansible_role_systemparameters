@@ -57,7 +57,9 @@
     force: '{{ item.force | default(omit) }}'
     validate: '{{ item.validate | default(omit) }}'
   loop: '{{ role_systemparameters_list }}'
-  notify: sysctl_load_system
+  notify:
+    - sysctl_load_system
+    - restart_modules_load
   when:
     - item.state == 'present'
   tags:

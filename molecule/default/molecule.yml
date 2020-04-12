@@ -19,7 +19,7 @@ driver:
   name: docker
 platforms:
   - name: "${role_name:-ansible_role_systemparameters}-${image:-ansible-molecule-centos}-${tag:-7}"
-    image: "${namespace:-caseraw}/${image:-ansible-molecule-fedora}:${tag:-latest}"
+    image: "${namespace:-caseraw}/${image:-ansible-molecule-centos}:${tag:-7}"
     command: "${cmd:-/usr/sbin/init}"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
